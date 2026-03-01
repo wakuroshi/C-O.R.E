@@ -1,0 +1,72 @@
+body {
+  background-color: black;
+  background-image: url("./nes.png");
+  background-size: cover;
+  font-family: 'Press Start 2P';
+  padding: 20px;
+}
+
+.top {
+  margin-bottom: 20px; 
+}
+
+.navbar-text-links {
+    align-items: center;
+}
+
+.nav-item:hover {
+    color: #982828; 
+  }
+
+.nav-item:hover::before {
+    content: "> ";
+}
+
+.nav-item:hover::after {
+    content: " <";
+}
+
+.main {
+  display: flex;
+}
+
+.bio {
+  flex: 0 0 70%;
+}
+
+.sidebar {
+flex: 0 0 30%;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.nes-container.with-title > .title {
+  position: relative;
+  top: -10px; 
+  background-color: #F7F3E8;
+  color: #982828;
+}
+
+.nes-container.with-title {
+  background-color: #F7F3E8;
+  border-color: #982828;
+  color: #4A3E39;
+  margin: 10px;
+}
+
+.image-link img {
+    border: 4px solid #5C7CFA;
+    height: auto;
+    margin: 5px auto;
+}
+
+.image-link:hover img {
+    border: 4px solid #69DB7C;
+}
+
+
+@media (max-width: 768px) {
+    .main { flex-direction: column; }
+    .bio, .sidebar { flex: 0 0 100%; }
+}
