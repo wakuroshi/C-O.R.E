@@ -3,56 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>C-O.R.E</title>
-    
+    <title>C-O.R.E - Themes</title> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
     <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  
   <div class="top">
     <div class="nes-container with-title">
       <p class="title">WELCOME TO C-O.R.E</p>
-      <p>NES-Inspired website with C logic, clean html and css using the <a href= "https://nostalgic-css.github.io/NES.css/">NES.css framework</a></p>
+      <p>Customize your experience.</p>
     </div>
   </div>
+
   <div class="main">
-    <div class="bio">
+    <div class="main-section" style="flex: 0 0 100%;"> 
       <div class="nes-container with-title">
-        <p class="title">About Me</p>
-        <p>Yet another CE student aspiring to learn bare-metal C and the boring stuff no other sane person would like to do. I like music and electronics. This site pourpuse is to provide information about graphs in the context of programming and algorithms. Random album I like:</p>
-        <a href="https://venetiansnares.bandcamp.com/album/rossz-csillag-alatt-sz-letett" target="_blank" class="image-link">
-        <img src="venetian-snares-pixel.jpg" alt="Album" width="300" height="300">
-        </a>
-      </div>
-    </div>
-    <div class="sidebar">
-      <div class="nes-container with-title">
-        <p class="title">Socials</p>
+        <p class="title">C-O.R.E@root:/home/.config/$</p>
+        
+        <div class="nes-field is-inline">
+          <label for="crt_toggle"><h3>CRT Filter:</h3></label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" id="crt_toggle" checked />
+              <span>ON</span>
+            </label>
+        </div>
+ 
         <p>
-        ><a href="https://github.com/wakuroshi" target="_blank">Github</a>
-        <br>
-        ><a href="https://discordapp.com/users/976926695519047721" target="_blank">Discord</a>
-        </p>
-      </div>
-      <div class="nes-container with-title">
-        <p class="title">Resources</p>
-        <p>
-        <a href="https://www.w3schools.com/html/default.asp" target="_blank">w3schools html</a>
+            Toggle scanlines, bloom, and color distortion.
         </p>
       </div>
     </div>
   </div>
-  <div class = "bottom">
+
+  <div class="bottom">
     <div class=" footer-nav nes-container with-title is-centered"> 
       <p class="title">navbar</p>
         <a href="index.html" class="nav-item">HOME</a>
-        <a href="teoria.html" class="nav-item">THEORY</a>
-        <a href="simulador.html" class="nav-item">SIMULATOR</a>
-        <a href="#" class="nav-item">THEMES</a>
-    </div>
+        <a href="theory.html" class="nav-item">THEORY</a>
+        <a href="simulator.html" class="nav-item">SIMULATOR</a>
+        <a href="about.html" class="nav-item">ABOUT</a>
     </div>
   </div>
+
+  <script>
+    const crtToggle = document.getElementById('crt_toggle');
+    
+    const isCrtEnabled = localStorage.getItem('crtEnabled') !== 'false';
+    crtToggle.checked = isCrtEnabled;
+    
+    if (isCrtEnabled) {
+      document.body.classList.add('crt-on');
+    }
+
+    crtToggle.addEventListener('change', () => {
+      if (crtToggle.checked) {
+        document.body.classList.add('crt-on');
+        localStorage.setItem('crtEnabled', 'true');
+      } else {
+        document.body.classList.remove('crt-on');
+        localStorage.setItem('crtEnabled', 'false');
+      }
+    });
+  </script>
 
 </body>
 </html>

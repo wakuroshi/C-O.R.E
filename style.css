@@ -4,7 +4,44 @@ body {
   background-size: cover;
   font-family: 'Press Start 2P';
   padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+body.crt-on{
+  filter: brightness(1.1) contrast(1.5) saturate(1.4);  
+  text-shadow: 0.5px 0 0 #ff0000, -0.5px 0 0 #0000ff;
+  position: relative;
+}
+
+body.crt-on::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0.8) 50%, rgba(0, 0, 0, 0.3) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.4; 
+}
+body.crt-on::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+    z-index: 9998; 
+}
+
 
 .top {
   margin-bottom: 20px; 
@@ -26,8 +63,17 @@ body {
     content: " <";
 }
 
+.scrollable-container {
+  height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;    
+}
 .main {
   display: flex;
+}
+
+.main-content{
+  flex: 0 0 100%;
 }
 
 .bio {
@@ -35,10 +81,14 @@ body {
 }
 
 .sidebar {
-flex: 0 0 30%;
-display: flex;
-flex-direction: column;
-gap: 10px;
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bottom{
+  margin-top: auto;
 }
 
 .nes-container.with-title > .title {
@@ -56,17 +106,34 @@ gap: 10px;
 }
 
 .image-link img {
-    border: 4px solid #5C7CFA;
-    height: auto;
-    margin: 5px auto;
+  border: 4px solid #5C7CFA;
+  height: auto;
+  margin: 5px auto;
 }
 
 .image-link:hover img {
-    border: 4px solid #69DB7C;
+  border: 4px solid #69DB7C;
 }
 
+summary {
+  list-style: none;
+  font-size: 32px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+summary::before {
+    content: "[+]";
+}
+
+details[open] summary::before {
+    content: "[-]";
+}
+summary:hover {
+  color: #982828;
+}
 
 @media (max-width: 768px) {
-    .main { flex-direction: column; }
-    .bio, .sidebar { flex: 0 0 100%; }
+  .main { flex-direction: column; }
+  .bio, .sidebar { flex: 0 0 100%; }
 }
