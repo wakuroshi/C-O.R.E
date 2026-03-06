@@ -22,7 +22,7 @@
 1. **Clone the repository**:
  
 ```bash
-git clone https://github.com/your-username/C-O.R.E.git
+git clone https://github.com/wakuroshi/C-O.R.E.git
 ```
 
 2. **Navigate to the directory**:
