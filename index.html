@@ -32,6 +32,13 @@
         <p>
             Toggle scanlines, bloom, and color distortion.
         </p>
+        <div class="nes-field is-inline">
+          <h3>Music:</h3>
+          <label>
+            <input type="checkbox" class="nes-checkbox" id="music_toggle" checked />
+            <span>ON</span>
+          </label>
+        </div>
       </div>
     </div>
   </div>
@@ -45,6 +52,12 @@
         <a href="about.html" class="nav-item">ABOUT</a>
     </div>
   </div>
+
+  <footer>
+      <p>© 2026 C-O.R.E Project | Licensed under GNU GPL v3</p>
+  </footer>
+
+  <script src="./bgmusic.js"></script>
 
   <script>
     const crtToggle = document.getElementById('crt_toggle');
@@ -65,6 +78,20 @@
         localStorage.setItem('crtEnabled', 'false');
       }
     });
+    const musicToggle = document.getElementById('music_toggle');
+
+        const isMusicEnabled = localStorage.getItem('bgMusicPlaying') !== 'false';
+        musicToggle.checked = isMusicEnabled;
+
+        musicToggle.addEventListener('change', () => {
+            if (musicToggle.checked) {
+                localStorage.setItem('bgMusicPlaying', 'true');
+                if (typeof tryPlay === 'function') tryPlay();
+            } else {
+                localStorage.setItem('bgMusicPlaying', 'false');
+                if (window.bgMusic) window.bgMusic.pause();
+            }
+        });
   </script>
 
 </body>

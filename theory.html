@@ -23,9 +23,25 @@
       <div class="nes-container with-title">
         <p class="title">COMPREHENSIVE GUIDE</p>
       <div class= "scrollable-container">
+      <details>
+        <summary>History</summary>
+        <p>
+        The origins of graph theory date back to 1736 in the Prussian city of Königsberg. The city featured seven bridges connecting two islands to the mainland. Citizens wondered if it was possible to walk through the city crossing each bridge exactly once and returning to the starting point.
+        <br>
+        <br>
+        Leonhard Euler, a Swiss mathematician, proved it was impossible. He realized that the specific geography didn't matter—only the connections between landmasses did. By representing landmasses as nodes (vertices) and bridges as edges, he laid the foundation for what we now call a Graph.
+        <h3>1. The Four Color Theorem (1852)</h3>
+        Francis Guthrie posed a simple question: can any map be colored with just four colors so that no two adjacent regions share the same? This led to the development of Graph Coloring, an algorithm now used for everything from scheduling high-school classes to assigning frequencies in cellular networks.
+        <h3>2. The Electrical Revolution (1847)</h3>
+        Gustav Kirchhoff applied graph theory to electrical circuits. He realized that a circuit is essentially a graph where branches are edges and junctions are nodes. His "Circuit Laws" are still used today by engineers to simulate complex hardware before it is ever built.
+        <h3>3. The Silicon Age & Internet (1950s - Present)</h3>
+      With the invention of the computer, graphs became indispensable:
+      Pathfinding: In 1956, Edsger Dijkstra created an algorithm to find the shortest path between two nodes. Today, this is the heart of Google Maps and OSPF routing protocols.
+      PageRank: In the late 90s, Google’s founders treated the entire World Wide Web as a massive directed graph. Your search results are literally the result of a graph traversal algorithm.
+        </details>
+        <br>
         <details>
           <summary>Definition</summary>
-          <p>
           Graphs are one of the most powerful and flexible data structures in computer science and mathematics. They allow us to model complex, non-linear relationships that simple structures like lists, arrays, or trees cannot easily represent.
           At their core, a graph consists of two fundamental sets:        
           <h3>Vertices (V)</h3>
@@ -74,6 +90,11 @@
     </div>
   </div>
 
+<footer class="simple-footer">
+    <p>© 2026 C-O.R.E Project | Licensed under GNU GPL v3</p>
+</footer>
+
+    <script src="./bgmusic.js"></script>
 <script>
     if (localStorage.getItem('crtEnabled') !== 'false') {
       document.body.classList.add('crt-on');

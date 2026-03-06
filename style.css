@@ -1,12 +1,13 @@
 body {
   background-color: black;
-  background-image: url("./nes.png");
+  background-image: url("./Resources/nes.png");
   background-size: cover;
   font-family: 'Press Start 2P';
   padding: 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 body.crt-on{
@@ -62,8 +63,12 @@ body.crt-on::before {
     content: " <";
 }
 
+
+footer {
+    text-align: center;
+  }
 .scrollable-container {
-  height: 400px;
+  height: 50vh;
   overflow-y: auto;
   padding-right: 10px;    
 }

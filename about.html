@@ -17,15 +17,24 @@
     </div>
   </div>
   <div class="main">
-    <div class="bio">
-      <div class="nes-container with-title">
-        <p class="title">About Me</p>
-        <p>Yet another CE student aspiring to learn bare-metal C and the boring stuff no other sane person would like to do. I like music and electronics. This site pourpuse is to provide information about graphs in the context of programming and algorithms. Random album I like:</p>
-        <a href="https://venetiansnares.bandcamp.com/album/rossz-csillag-alatt-sz-letett" target="_blank" class="image-link">
-        <img src="venetian-snares-pixel.jpg" alt="Album" width="200" height="200">
-        </a>
+<div class="bio">
+  <div class="nes-container with-title">
+    <p class="title">About Me</p>
+    
+    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+              <p>Yet another CE student aspiring to learn bare-metal C and the boring stuff no other sane person would like to do. I like music and electronics.  My favorite text editor is vim. 
+              <br>
+              Random album I like: Rossz Csillag Alatt Született by Venetian Snares:</p>
+      <a href="https://venetiansnares.bandcamp.com/album/rossz-csillag-alatt-sz-letett" target="_blank" class="image-link" style="flex: 0 0 200px;">
+        <img src="./Resources/venetian-snares-pixel.jpg" alt="Album" width="200" height="200">
+      </a>
+      <div style="flex: 1;">
+        <p>This site purpose is to provide information about graphs in the context of programming and algorithms. The site is designed with 4 pages in very simple and easy to read structure and responsive. Made to learn HTML, CSS, JavaScript and integration of WebAssembly thanks to Emscripten.</p>
       </div>
+      
     </div>
+  </div>
+</div>
     <div class="sidebar">
       <div class="nes-container with-title">
         <p class="title">Socials</p>
@@ -39,6 +48,10 @@
         <p class="title">Resources</p>
         <p>
         <a href="https://www.w3schools.com/html/default.asp" target="_blank">w3schools html</a>
+        <br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">mdn</a>
+        <br>
+        <a href="https://www.youtube.com/watch?v=dm4kGvOxmjE" target="_blank">BG song</a>
         </p>
       </div>
     </div>
@@ -52,8 +65,13 @@
         <a href="simulator.html" class="nav-item">SIMULATOR</a>
         <a href="about.html" class="nav-item">ABOUT</a>
     </div>
-  </div>
+  </div> 
 
+<footer class="simple-footer">
+    <p>© 2026 C-O.R.E Project | Licensed under GNU GPL v3</p>
+</footer>
+
+    <script src="./bgmusic.js"></script>
 <script>
     if (localStorage.getItem('crtEnabled') !== 'false') {
       document.body.classList.add('crt-on');
